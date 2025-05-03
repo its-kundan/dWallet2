@@ -1,26 +1,26 @@
-import './globals.css';
-import { ThemeProvider } from '@/context/ThemeContext';
-import { WalletProvider } from '@/context/WalletContext';
-import ThemeToggle from '@/components/ThemeToggle';
-import NavigationBar from '@/components/NavigationBar';
+import { ThemeProvider } from '@/context/ThemeContext'
+import { WalletProvider } from '@/context/WalletContext'
+import { NavigationBar } from '@/components/NavigationBar'
+import './globals.css'
 
 export const metadata = {
-  title: 'Energiswap',
-  description: 'Crypto trading dApp with real-time data and wallet support',
-};
+  title: 'Energiswap dApp',
+  description: 'Decentralized exchange for Energi tokens',
+}
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark">
-      <body className="bg-background text-foreground">
+    <html lang="en" suppressHydrationWarning>
+      <body className="min-h-screen bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors">
         <ThemeProvider>
           <WalletProvider>
-            <NavigationBar />
-            <ThemeToggle />
-            {children}
+            <div className="container mx-auto px-4">
+              <NavigationBar />
+              <main className="py-8">{children}</main>
+            </div>
           </WalletProvider>
         </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }

@@ -1,35 +1,33 @@
-import { useState, useMemo } from 'react';
+import { useState } from 'react'
 
-export default function useSortableData(items = [], config = null) {
-  const [sortConfig, setSortConfig] = useState(config);
+export const useSortableData = (items, config = null) => {
+  const [sortConfig, setSortConfig] = useState(config)
 
-  const sortedData = useMemo(() => {
-    // Ensure items is always an array
-    const safeItems = Array.isArray(items) ? [...items] : [];
+  // Ensure items is always an array, default to empty array if falsy
+  const safeItems = Array.isArray(items) ? items : []
 
-    if (sortConfig !== null) {
-      safeItems.sort((a, b) => {
-        const aValue = a[sortConfig.key];
-        const bValue = b[sortConfig.key];
+  const sortedItems = [...safeItems].sort((a, b) => {
+    if (!sortConfig) return 0
 
-        if (typeof aValue === 'string') {
-          return aValue.localeCompare(bValue) * (sortConfig.direction === 'ascending' ? 1 : -1);
-        } else {
-          return (aValue - bValue) * (sortConfig.direction === 'ascending' ? 1 : -1);
-        }
-      });
+    const aValue = a[sortConfig.key]
+    const bValue = b[sortConfig.key]
+
+    if (aValue < bValue) {
+      return sortConfig.direction === 'ascending' ? -1 : 1
     }
-
-    return safeItems;
-  }, [items, sortConfig]);
+    if (aValue > bValue) {
+      return sortConfig.direction === 'ascending' ? 1 : -1
+    }
+    return 0
+  })
 
   const requestSort = (key) => {
-    let direction = 'ascending';
-    if (sortConfig?.key === key && sortConfig.direction === 'ascending') {
-      direction = 'descending';
+    let direction = 'ascending'
+    if (sortConfig && sortConfig.key === key && sortConfig.direction === 'ascending') {
+      direction = 'descending'
     }
-    setSortConfig({ key, direction });
-  };
+    setSortConfig({ key, direction })
+  }
 
-  return { sortedData, requestSort, sortConfig };
+  return { sortedItems, requestSort, sortConfig }
 }

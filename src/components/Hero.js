@@ -1,34 +1,16 @@
-import Link from 'next/link';
-
-export default function Hero() {
-  return (
-    <section className="flex flex-col items-center text-center py-16 px-4">
-      <div className="bg-purple-800 text-white px-4 py-1 rounded-full text-sm mb-4">
-        New: Multi-chain swaps available
+export const Hero = () => {
+    return (
+      <div className="bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark text-white p-8 rounded-lg">
+        <h1 className="text-3xl font-bold mb-4">Welcome to Energiswap</h1>
+        <p className="mb-6">Trade tokens securely on the Energi network</p>
+        <div className="flex gap-4">
+          <button className="px-4 py-2 bg-white text-primary-light rounded-lg hover:bg-opacity-90">
+            Start Trading
+          </button>
+          <button className="px-4 py-2 border border-white text-white rounded-lg hover:bg-white hover:bg-opacity-10">
+            Learn More
+          </button>
+        </div>
       </div>
-      <h1 className="text-4xl sm:text-5xl font-bold text-blue-400 mb-4">
-        Transform Your Crypto Trading Experience
-      </h1>
-      <p className="text-lg text-muted mb-8 max-w-2xl">
-        Lightning-fast cryptocurrency exchanges with institutional-grade security and best-in-class rates
-      </p>
-      <div className="flex gap-4">
-        <Link href="/swap">
-          <button className="px-6 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition">
-            Start Swapping Now →
-          </button>
-        </Link>
-        <Link href="/home">
-          <button className="px-6 py-2 bg-gray-800 text-white rounded border border-gray-600 hover:bg-gray-700 transition">
-            Home
-          </button>
-        </Link>
-        <Link href="/wallet">
-          <button className="px-6 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition">
-            Wallet →
-          </button>
-        </Link>
-      </div>
-    </section>
-  );
-}
+    )
+  }
