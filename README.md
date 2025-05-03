@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# EnergiSwap dApp - Decentralized Cryptocurrency Exchange
 
-## Getting Started
+![EnergiSwap Banner](public/images/home.png)
 
-First, run the development server:
+A modern decentralized application (dApp) for swapping cryptocurrencies with real-time market data and secure wallet integration.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🔗 Live Demo
+**[https://d-wallet2.vercel.app/home](https://d-wallet2.vercel.app/home)**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 👨‍💻 Developer
+**[Kundan Kumar](https://github.com/its-kundan)**
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## ✨ Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Real-time cryptocurrency price data
+- MetaMask wallet integration
+- Dark/light mode toggle
+- Responsive design for all devices
+- Sortable token table with market data
+- Secure transaction handling
 
-## Learn More
+## 🖼️ Screenshots
 
-To learn more about Next.js, take a look at the following resources:
+### Light Mode Dashboard
+![Light Mode](public/images/home.png)  
+*Clean, modern interface with real-time market data in light theme.*
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Dark Mode Dashboard
+![Dark Mode](public/images/homed.png)  
+*Eye-friendly dark theme for comfortable nighttime trading.*
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Mobile Responsive View
+![Mobile View](public/images/mobile%20view.png)  
+*Fully responsive design that works perfectly on any device size.*
 
-## Deploy on Vercel
+### Token Market Data
+![Tokens View](public/images/tokens.png)  
+*Comprehensive token table with sortable columns and price information.*
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Wallet Integration
+![Wallet Connect](public/images/connect.png)  
+*Seamless MetaMask wallet connection with one-click onboarding.*
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Wallet Overview
+![Wallet View](public/images/wallet.png)  
+*Detailed wallet dashboard showing balances and transaction history.*
+
+### Pagination System
+![Pagination](public/images/pagination.png)  
+*User-friendly pagination for browsing through extensive token lists.*
+
+### Support Section
+![Support](public/images/support.png)  
+*Helpful support section with FAQs and contact options.*
+
+## 🚀 Technologies Used
+
+- **Frontend**: Next.js, React, Tailwind CSS
+- **Web3**: Ethers.js, MetaMask API
+- **State Management**: React Context API
+- **API**: EnergiSwap Exchange API
+- **Build Tools**: Vercel, Yarn
+
+## 🛠️ Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/its-kundan/energi-frontend.git
+   ```
+2. Install dependencies:
+   ```bash
+   cd energi-frontend
+   yarn install
+   ```
+3. Start the development server:
+   ```bash
+   yarn dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## 🌟 Why This Project?
+
+This dApp demonstrates:
+- Modern Web3 development practices
+- Clean UI/UX design principles
+- Secure wallet integration
+- Real-time data handling
+- Responsive design implementation
+
+## 🤝 Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request.
