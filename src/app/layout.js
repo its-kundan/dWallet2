@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
           <WalletProvider>
             <div className="container mx-auto px-4">
               <NavigationBar />
-              <main className="py-8">{children}</main>
+              <main className="py-20 pt-20">{children}</main>
             </div>
           </WalletProvider>
         </ThemeProvider>
