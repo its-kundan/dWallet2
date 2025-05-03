@@ -1,4 +1,5 @@
 "use client"
+import Image from 'next/image'
 import { useWallet } from '@/context/WalletContext'
 import { formatUSD } from '@/utils/format'
 
@@ -11,6 +12,16 @@ export default function WalletPage() {
       
       {!isConnected ? (
         <div className="text-center py-12">
+          {/* MetaMask Icon */}
+          <div className="flex justify-center mb-6">
+            <Image
+              src="/metamask-icon.png"
+              alt="MetaMask Icon"
+              width={60}
+              height={60}
+            />
+          </div>
+
           <p className="mb-6">Connect your wallet to view your balances</p>
           <button
             onClick={connectWallet}
