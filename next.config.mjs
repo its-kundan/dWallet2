@@ -4,11 +4,6 @@ const nextConfig = {
     
     webpack: (config) => {
       config.externals.push('pino-pretty', 'lokijs', 'encoding')
-      config.resolve.fallback = { 
-        fs: false,
-        net: false,
-        tls: false
-      }
       return config
     },
   
@@ -21,28 +16,7 @@ const nextConfig = {
       ]
     },
   
-    async headers() {
-      return [
-        {
-          source: '/(.*)',
-          headers: [
-            {
-              key: 'X-Content-Type-Options',
-              value: 'nosniff'
-            },
-            {
-              key: 'X-Frame-Options',
-              value: 'DENY'
-            },
-            {
-              key: 'X-XSS-Protection',
-              value: '1; mode=block'
-            }
-          ]
-        }
-      ]
-    },
-  
+    // Optional: Keep these if you need them
     images: {
       remotePatterns: [
         {
@@ -51,11 +25,6 @@ const nextConfig = {
           pathname: '/**',
         },
       ],
-      minimumCacheTTL: 60,
-    },
-  
-    experimental: {
-      optimizePackageImports: ['ethers'],
     }
   }
   
